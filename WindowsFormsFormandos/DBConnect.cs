@@ -607,11 +607,42 @@ namespace WindowsFormsBDGestaoFormandos
             return ultimoIDFormadores;
         }
 
-        public bool InsertFormador(string ID, string nome, string nif, string idUser, string data_nascimento, string id_area) //Insert para InserirFormandos
+        public int DevolveUltimoIDUtilizador()
+        {
+            int ultimoIDUser = 0;
+
+            string query = "select max(id_utilizador) from utilizador;";
+
+            try
+            {
+                if (OpenConnection())
+                {
+                    MySqlCommand cmd = new MySqlCommand(query, connection);
+                    int.TryParse(cmd.ExecuteScalar().ToString(), out ultimoIDUser);
+                    ultimoIDUser = ultimoIDUser + 1;
+                }
+            }
+            catch (MySqlException ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+
+            finally
+            {
+                CloseConnection();
+            }
+
+            return ultimoIDUser;
+        }
+
+        public bool InsertFormador(string ID, string nome, string nif, string idUser, string userName, string password, string userRole, string data_nascimento, string id_area) //Insert para InserirFormandos
         {
             // Este método é responsável por inserir um novo registro na tabela formando do banco de dados.
-            string query = "Insert into formador (id_formador, nome, nif, id_utilizador, dataNascimento, id_area) values ('" +
-                 ID + "', '" + nome + "', '" + nif + "', '" + idUser + "', '" + data_nascimento + "','" + id_area + "');";
+            string query1 = "Insert into utilizador (id_utilizador, nome_utilizador, palavra_passe, userRole) values ("
+                + $"'{idUser}', '{userName}', '{password}', '{userRole}');";
+            string query2 = "Insert into formador (id_formador, nome, nif, dataNascimento, id_area, id_utilizador) values (" 
+                + $"'{ID}', '{nome}', '{nif}', '{data_nascimento}', '{id_area}', '{idUser}');";
 
             bool flag = true;
 
@@ -619,8 +650,11 @@ namespace WindowsFormsBDGestaoFormandos
             {
                 if (OpenConnection())
                 {
-                    MySqlCommand cmd = new MySqlCommand(query, connection);
+                    MySqlCommand cmd = new MySqlCommand(query1, connection);
                     cmd.ExecuteNonQuery();
+
+                    MySqlCommand cmd2 = new MySqlCommand(query2, connection);
+                    cmd2.ExecuteNonQuery();
                 }
             }
 

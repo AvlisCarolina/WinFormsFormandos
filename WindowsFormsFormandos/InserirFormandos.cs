@@ -23,6 +23,7 @@ namespace WindowsFormsFormandos
         private void InserirFormandos_Load(object sender, EventArgs e)
         {
             nudID.Value = ligacao.DevolveUltimoID(); // método definido no DBConnect
+            nudID.Enabled = false;
             PesquisaNacionalidade(); // método definido no DBConnect
 
             //Este evento define o valor do campo nudID com o último ID disponível no banco de dados e preenche o ComboBox de nacionalidades.

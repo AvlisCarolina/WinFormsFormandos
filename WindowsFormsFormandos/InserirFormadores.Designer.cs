@@ -45,16 +45,24 @@
             this.label2 = new System.Windows.Forms.Label();
             this.nudID = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.txtUserName = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtUserRole = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudID)).BeginInit();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.btnGravar);
             this.groupBox2.Controls.Add(this.btnCancelar);
-            this.groupBox2.Location = new System.Drawing.Point(12, 292);
+            this.groupBox2.Location = new System.Drawing.Point(12, 479);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(469, 72);
             this.groupBox2.TabIndex = 5;
@@ -82,13 +90,13 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtUserRole);
+            this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.cbArea);
             this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.txtIdUser);
             this.groupBox1.Controls.Add(this.dateTimePicker1);
             this.groupBox1.Controls.Add(this.mtxtDataNascimento);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.txtNIF);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.txtNome);
@@ -97,14 +105,15 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(469, 274);
+            this.groupBox1.Size = new System.Drawing.Size(469, 280);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Dados Pessoais";
             // 
             // cbArea
             // 
             this.cbArea.FormattingEnabled = true;
-            this.cbArea.Location = new System.Drawing.Point(113, 234);
+            this.cbArea.Location = new System.Drawing.Point(113, 229);
             this.cbArea.Name = "cbArea";
             this.cbArea.Size = new System.Drawing.Size(319, 21);
             this.cbArea.TabIndex = 18;
@@ -112,7 +121,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(10, 237);
+            this.label8.Location = new System.Drawing.Point(10, 232);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(97, 13);
             this.label8.TabIndex = 17;
@@ -120,15 +129,15 @@
             // 
             // txtIdUser
             // 
-            this.txtIdUser.Location = new System.Drawing.Point(113, 145);
+            this.txtIdUser.Location = new System.Drawing.Point(113, 40);
             this.txtIdUser.MaxLength = 100;
             this.txtIdUser.Name = "txtIdUser";
-            this.txtIdUser.Size = new System.Drawing.Size(319, 20);
+            this.txtIdUser.Size = new System.Drawing.Size(87, 20);
             this.txtIdUser.TabIndex = 7;
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(185, 195);
+            this.dateTimePicker1.Location = new System.Drawing.Point(185, 190);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(247, 20);
             this.dateTimePicker1.TabIndex = 16;
@@ -136,7 +145,7 @@
             // 
             // mtxtDataNascimento
             // 
-            this.mtxtDataNascimento.Location = new System.Drawing.Point(113, 195);
+            this.mtxtDataNascimento.Location = new System.Drawing.Point(113, 190);
             this.mtxtDataNascimento.Mask = "00/00/0000";
             this.mtxtDataNascimento.Name = "mtxtDataNascimento";
             this.mtxtDataNascimento.Size = new System.Drawing.Size(66, 20);
@@ -148,7 +157,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(12, 195);
+            this.label7.Location = new System.Drawing.Point(12, 190);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(95, 13);
             this.label7.TabIndex = 14;
@@ -157,7 +166,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(36, 148);
+            this.label4.Location = new System.Drawing.Point(36, 43);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(70, 13);
             this.label4.TabIndex = 6;
@@ -218,11 +227,78 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "ID_Formador:";
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(49, 102);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(56, 13);
+            this.label5.TabIndex = 19;
+            this.label5.Text = "Password:";
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.Location = new System.Drawing.Point(111, 102);
+            this.txtPassword.MaxLength = 100;
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(319, 20);
+            this.txtPassword.TabIndex = 20;
+            // 
+            // txtUserName
+            // 
+            this.txtUserName.Location = new System.Drawing.Point(111, 70);
+            this.txtUserName.MaxLength = 100;
+            this.txtUserName.Name = "txtUserName";
+            this.txtUserName.Size = new System.Drawing.Size(319, 20);
+            this.txtUserName.TabIndex = 22;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(61, 150);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(46, 13);
+            this.label6.TabIndex = 21;
+            this.label6.Text = "Função:";
+            // 
+            // txtUserRole
+            // 
+            this.txtUserRole.Location = new System.Drawing.Point(112, 147);
+            this.txtUserRole.MaxLength = 100;
+            this.txtUserRole.Name = "txtUserRole";
+            this.txtUserRole.Size = new System.Drawing.Size(319, 20);
+            this.txtUserRole.TabIndex = 24;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(22, 73);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(84, 13);
+            this.label9.TabIndex = 23;
+            this.label9.Text = "Nome Utilizador:";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.txtPassword);
+            this.groupBox3.Controls.Add(this.label9);
+            this.groupBox3.Controls.Add(this.label4);
+            this.groupBox3.Controls.Add(this.txtUserName);
+            this.groupBox3.Controls.Add(this.txtIdUser);
+            this.groupBox3.Controls.Add(this.label5);
+            this.groupBox3.Location = new System.Drawing.Point(12, 298);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(468, 175);
+            this.groupBox3.TabIndex = 6;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Dados de Acesso";
+            // 
             // InserirFormadores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(500, 376);
+            this.ClientSize = new System.Drawing.Size(500, 567);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "InserirFormadores";
@@ -232,6 +308,8 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudID)).EndInit();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -255,5 +333,12 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.NumericUpDown nudID;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtPassword;
+        private System.Windows.Forms.TextBox txtUserRole;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtUserName;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.GroupBox groupBox3;
     }
 }

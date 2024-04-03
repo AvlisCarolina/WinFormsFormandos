@@ -104,6 +104,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EliminarFormador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EliminarFormador.Designer.cs">
+      <DependentUpon>EliminarFormador.cs</DependentUpon>
+    </Compile>
     <Compile Include="AtualizarArea.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -25,6 +25,7 @@ namespace WindowsFormsFormandos
         ListarNacionalidade formMostrarNacionalidade = new ListarNacionalidade();
 
         InserirFormadores formInserirFormadores = new InserirFormadores();
+
         ListarFormadores formListarFormadores = new ListarFormadores();
 
         InserirArea formInserirArea = new InserirArea();

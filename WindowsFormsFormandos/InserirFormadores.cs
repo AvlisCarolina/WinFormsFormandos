@@ -23,6 +23,10 @@ namespace WindowsFormsFormandos
         private void InserirFormadores_Load(object sender, EventArgs e)
         {
             nudID.Value = ligacao.DevolveUltimoIDFormadores();
+            txtIdUser.Text = ligacao.DevolveUltimoIDUtilizador().ToString();
+            nudID.Enabled = false;
+            txtIdUser.Enabled = false;
+
             PesquisaArea();
 
         }
@@ -78,7 +82,7 @@ namespace WindowsFormsFormandos
                 string[] texto2 = cbArea.Text.Split(new Char[] { '-' }); //divide o texto selecionado no ComboBox de area em três partes 
                 string id_area = texto2[0]; //Extrai o ID da area do array texto2.
 
-                if (ligacao.InsertFormador(nudID.Value.ToString(), txtNome.Text, txtNIF.Text, txtIdUser.Text, DateTime.Parse(mtxtDataNascimento.Text).ToString("yyyy-MM-dd"), id_area)) //Chama o método InsertFormador
+                if (ligacao.InsertFormador(nudID.Value.ToString(), txtNome.Text, txtNIF.Text, txtIdUser.Text, txtUserName.Text, txtPassword.Text, txtUserRole.Text, DateTime.Parse(mtxtDataNascimento.Text).ToString("yyyy-MM-dd"), id_area)) //Chama o método InsertFormador
                 {
                     MessageBox.Show("Inserido com Sucesso");
                     Limpar();
@@ -183,9 +187,12 @@ namespace WindowsFormsFormandos
             //Limpa todos os campos do formulário e redefine o valor do campo nudID com o último ID disponível no banco de dados.
 
             nudID.Value = ligacao.DevolveUltimoIDFormadores();
+            txtIdUser.Text = ligacao.DevolveUltimoIDUtilizador().ToString();
             txtNIF.Text = string.Empty;
-            txtIdUser.Text = string.Empty;
             txtNome.Text = string.Empty;
+            txtPassword.Text = string.Empty;
+            txtUserName.Text = string.Empty;
+            txtUserRole.Text = string.Empty;
             dateTimePicker1.Value = DateTime.Now;
             mtxtDataNascimento.Clear();
             cbArea.Text = string.Empty;
