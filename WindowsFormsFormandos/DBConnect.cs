@@ -639,6 +639,81 @@ namespace WindowsFormsBDGestaoFormandos
 
         }
 
+        public void PreencherDataGridViewFormadores(ref DataGridView dgv)
+        {
+            string query = "select id_formador, nome, nif, area.area " +
+                "from formador " +
+                "join area on area.id_area = formador.id_area order by nome;";
+
+            try
+            {
+                if (OpenConnection())
+                {
+                    MySqlCommand cmd = new MySqlCommand(query, connection);
+                    MySqlDataReader dr = cmd.ExecuteReader();
+
+                    int idxLinha = 0;
+                    while (dr.Read())
+                    {
+                        dgv.Rows.Add();
+                        dgv.Rows[idxLinha].Cells["ID_Formador"].Value = dr[0].ToString();
+                        dgv.Rows[idxLinha].Cells["Nome"].Value = dr[1].ToString();
+                        dgv.Rows[idxLinha].Cells["NIF"].Value = dr[2].ToString();
+                        dgv.Rows[idxLinha].Cells["Area"].Value = dr[3].ToString();
+                        idxLinha++;
+
+                    }
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                CloseConnection();
+            }
+        }
+
+        public void PreencherDataGridViewFormadoresPesquisa(ref DataGridView dgv, string nome, string id)
+        {
+            string query = "select id_formador, nome, nif, area.area " +
+                "from formador " +
+                "join area on area.id_area = formador.id_area " +
+                $"where nome like '{nome}%'" +
+                (id != "" ? $" and area.id_area = {id}" : "") +
+                " order by nome;";
+
+            try
+            {
+                if (OpenConnection())
+                {
+                    MySqlCommand cmd = new MySqlCommand(query, connection);
+                    MySqlDataReader dr = cmd.ExecuteReader();
+
+                    int idxLinha = 0;
+                    while (dr.Read())
+                    {
+                        dgv.Rows.Add();
+                        dgv.Rows[idxLinha].Cells["id_formador"].Value = dr[0].ToString();
+                        dgv.Rows[idxLinha].Cells["Nome"].Value = dr[1].ToString();
+                        dgv.Rows[idxLinha].Cells["NIF"].Value = dr[2].ToString();
+                        dgv.Rows[idxLinha].Cells["Area"].Value = dr[3].ToString();
+                        idxLinha++;
+
+                    }
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                CloseConnection();
+            }
+        }
+
 
         //--------------- FIM PARTE FORMANDOS DO FORM PRINCIPAL
 

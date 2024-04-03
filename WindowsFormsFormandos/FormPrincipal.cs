@@ -25,10 +25,12 @@ namespace WindowsFormsFormandos
         ListarNacionalidade formMostrarNacionalidade = new ListarNacionalidade();
 
         InserirFormadores formInserirFormadores = new InserirFormadores();
+        ListarFormadores formListarFormadores = new ListarFormadores();
 
         InserirArea formInserirArea = new InserirArea();
         AtualizarArea formAtualizarArea = new AtualizarArea();
         EliminarArea formEliminarArea = new EliminarArea();
+        ListarArea formListarArea = new ListarArea();
 
         AutenticacaoUtilizador formAutenticacaoUtilizador = new AutenticacaoUtilizador();
 
@@ -214,6 +216,19 @@ namespace WindowsFormsFormandos
             formInserirFormadores.Activate();
         }
 
+        private void toolStripMenuItem10_Click(object sender, EventArgs e)
+        {
+            if (formListarFormadores.IsDisposed)
+            {
+                formListarFormadores = new ListarFormadores();
+            }
+            formListarFormadores.MdiParent = this;
+            formListarFormadores.StartPosition = FormStartPosition.Manual;
+            formListarFormadores.Location = new Point((this.ClientSize.Width - formListarFormadores.Width) / 2,
+                (this.ClientSize.Height - formListarFormadores.Height) / 3);
+            formListarFormadores.Show();
+            formListarFormadores.Activate();
+        }
 
 
         //Area
@@ -258,5 +273,21 @@ namespace WindowsFormsFormandos
             formEliminarArea.Show();
             formEliminarArea.Activate();
         }
+
+        private void toolStripMenuItem15_Click(object sender, EventArgs e)
+        {
+            if (formListarArea.IsDisposed)
+            {
+                formListarArea = new ListarArea();
+            }
+            formListarArea.MdiParent = this;
+            formListarArea.StartPosition = FormStartPosition.Manual;
+            formListarArea.Location = new Point((this.ClientSize.Width - formListarArea.Width) / 2,
+                (this.ClientSize.Height - formListarArea.Height) / 3);
+            formListarArea.Show();
+            formListarArea.Activate();
+        }
+
+        
     }
 }

@@ -176,6 +176,18 @@
     <Compile Include="InserirNacionalidade.Designer.cs">
       <DependentUpon>InserirNacionalidade.cs</DependentUpon>
     </Compile>
+    <Compile Include="ListarArea.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListarArea.Designer.cs">
+      <DependentUpon>ListarArea.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListarFormadores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListarFormadores.Designer.cs">
+      <DependentUpon>ListarFormadores.cs</DependentUpon>
+    </Compile>
     <Compile Include="ListarFormandos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -226,6 +238,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="InserirNacionalidade.resx">
       <DependentUpon>InserirNacionalidade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListarArea.resx">
+      <DependentUpon>ListarArea.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListarFormadores.resx">
+      <DependentUpon>ListarFormadores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ListarFormandos.resx">
       <DependentUpon>ListarFormandos.cs</DependentUpon>
