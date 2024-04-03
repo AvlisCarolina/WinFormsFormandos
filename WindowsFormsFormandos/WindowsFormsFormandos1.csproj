@@ -224,6 +224,9 @@
     <EmbeddedResource Include="EliminarArea.resx">
       <DependentUpon>EliminarArea.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EliminarFormador.resx">
+      <DependentUpon>EliminarFormador.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EliminarFormandos.resx">
       <DependentUpon>EliminarFormandos.cs</DependentUpon>
     </EmbeddedResource>

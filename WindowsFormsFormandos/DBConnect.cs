@@ -636,11 +636,57 @@ namespace WindowsFormsBDGestaoFormandos
             return ultimoIDUser;
         }
 
+        public bool PesquisaFormadores(string ID_Formador, ref string nome, ref string nif, ref string idUser, ref string userName, ref string password, ref string userRole, ref string data_nascimento, ref string area)
+        {
+            bool flag = false;
+
+            string query = $@"
+                Select nome, nif, dataNascimento, area, user.id_utilizador, user.nome_utilizador, user.palavra_passe, user.userRole
+                from formador
+                join utilizador as user on user.id_utilizador = formador.id_utilizador
+                join area on area.id_area = formador.id_area
+                where formador.id_formador = {ID_Formador};";
+
+
+            try
+            {
+                if (OpenConnection())
+                {
+                    MySqlCommand cmd = new MySqlCommand(query, connection);
+                    MySqlDataReader dataReader = cmd.ExecuteReader();
+
+                    while (dataReader.Read())
+                    {
+                        nome = dataReader[0].ToString();
+                        nif = dataReader[1].ToString();
+                        idUser = dataReader[4].ToString();
+                        userName = dataReader[5].ToString();
+                        password = dataReader[6].ToString();
+                        userRole = dataReader[7].ToString();
+                        data_nascimento = dataReader[2].ToString();
+                        area = dataReader[3].ToString();
+
+                        flag = true;
+                    }
+                    dataReader.Close();
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                CloseConnection();
+            }
+            return flag;
+        }
+
         public bool InsertFormador(string ID, string nome, string nif, string idUser, string userName, string password, string userRole, string data_nascimento, string id_area) //Insert para InserirFormandos
         {
             // Este método é responsável por inserir um novo registro na tabela formando do banco de dados.
             string query1 = "Insert into utilizador (id_utilizador, nome_utilizador, palavra_passe, userRole) values ("
-                + $"'{idUser}', '{userName}', '{password}', '{userRole}');";
+                + $"'{idUser}', '{userName}', sha2('{password}',512), '{userRole}');";
             string query2 = "Insert into formador (id_formador, nome, nif, dataNascimento, id_area, id_utilizador) values (" 
                 + $"'{ID}', '{nome}', '{nif}', '{data_nascimento}', '{id_area}', '{idUser}');";
 
@@ -673,6 +719,36 @@ namespace WindowsFormsBDGestaoFormandos
 
         }
 
+        public bool DeleteFormador(string id_formador, string id_utilizador) // Aplica-se a mesma lógica do método InserirFormando, mudando apenas a query.
+        {
+            string query = $@"Delete from formador where id_formador = {id_formador};
+                Delete from utilizador where id_utilizador = {id_utilizador};";
+
+            bool flag = true;
+
+            try
+            {
+                if (OpenConnection())
+                {
+                    MySqlCommand cmd = new MySqlCommand(query, connection);
+                    cmd.ExecuteNonQuery();
+
+                }
+            }
+
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+                flag = false;
+            }
+
+            finally
+            {
+                CloseConnection();
+            }
+
+            return flag;
+        }
         public void PreencherDataGridViewFormadores(ref DataGridView dgv)
         {
             string query = "select id_formador, nome, nif, area.area " +

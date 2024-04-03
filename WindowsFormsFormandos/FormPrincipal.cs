@@ -25,7 +25,7 @@ namespace WindowsFormsFormandos
         ListarNacionalidade formMostrarNacionalidade = new ListarNacionalidade();
 
         InserirFormadores formInserirFormadores = new InserirFormadores();
-
+        EliminarFormador formEliminarFormadores = new EliminarFormador();
         ListarFormadores formListarFormadores = new ListarFormadores();
 
         InserirArea formInserirArea = new InserirArea();
@@ -216,7 +216,6 @@ namespace WindowsFormsFormandos
             formInserirFormadores.Show();
             formInserirFormadores.Activate();
         }
-
         private void toolStripMenuItem10_Click(object sender, EventArgs e)
         {
             if (formListarFormadores.IsDisposed)
@@ -229,6 +228,20 @@ namespace WindowsFormsFormandos
                 (this.ClientSize.Height - formListarFormadores.Height) / 3);
             formListarFormadores.Show();
             formListarFormadores.Activate();
+        }
+        private void toolStripMenuItem9_Click(object sender, EventArgs e)
+        {
+            if (formEliminarFormadores.IsDisposed)
+            {
+                formEliminarFormadores = new EliminarFormador();
+            }
+            formEliminarFormadores.MdiParent = this;
+            formEliminarFormadores.StartPosition = FormStartPosition.Manual;
+            formEliminarFormadores.Location = new Point((this.ClientSize.Width - formEliminarFormadores.Width) / 2,
+                (this.ClientSize.Height - formEliminarFormadores.Height) / 3);
+            formEliminarFormadores.Show();
+            formEliminarFormadores.Activate();
+
         }
 
 

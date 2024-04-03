@@ -29,12 +29,14 @@
         private void InitializeComponent()
         {
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnPesquisa = new System.Windows.Forms.Button();
             this.nudID = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtNacionalidade = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtContacto = new System.Windows.Forms.TextBox();
             this.mtxtDataNascimento = new System.Windows.Forms.MaskedTextBox();
@@ -50,8 +52,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnPesquisa = new System.Windows.Forms.Button();
-            this.txtNacionalidade = new System.Windows.Forms.TextBox();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudID)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -70,6 +70,22 @@
             this.groupBox3.TabIndex = 3;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Pesquisa";
+            // 
+            // btnPesquisa
+            // 
+            this.btnPesquisa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnPesquisa.Image = global::WindowsFormsFormandos.Properties.Resources.b_search;
+            this.btnPesquisa.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnPesquisa.Location = new System.Drawing.Point(183, 27);
+            this.btnPesquisa.Name = "btnPesquisa";
+            this.btnPesquisa.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.btnPesquisa.Size = new System.Drawing.Size(81, 23);
+            this.btnPesquisa.TabIndex = 2;
+            this.btnPesquisa.Text = "Pesquisar";
+            this.btnPesquisa.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPesquisa.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnPesquisa.UseVisualStyleBackColor = true;
+            this.btnPesquisa.Click += new System.EventHandler(this.btnPesquisa_Click);
             // 
             // nudID
             // 
@@ -145,6 +161,14 @@
             this.groupBox1.Size = new System.Drawing.Size(469, 315);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
+            // 
+            // txtNacionalidade
+            // 
+            this.txtNacionalidade.Location = new System.Drawing.Point(104, 274);
+            this.txtNacionalidade.MaxLength = 100;
+            this.txtNacionalidade.Name = "txtNacionalidade";
+            this.txtNacionalidade.Size = new System.Drawing.Size(328, 20);
+            this.txtNacionalidade.TabIndex = 18;
             // 
             // label8
             // 
@@ -282,30 +306,6 @@
             this.label2.Size = new System.Drawing.Size(38, 13);
             this.label2.TabIndex = 0;
             this.label2.Text = "Nome:";
-            // 
-            // btnPesquisa
-            // 
-            this.btnPesquisa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnPesquisa.Image = global::WindowsFormsFormandos.Properties.Resources.b_search;
-            this.btnPesquisa.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnPesquisa.Location = new System.Drawing.Point(183, 27);
-            this.btnPesquisa.Name = "btnPesquisa";
-            this.btnPesquisa.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnPesquisa.Size = new System.Drawing.Size(81, 23);
-            this.btnPesquisa.TabIndex = 2;
-            this.btnPesquisa.Text = "Pesquisar";
-            this.btnPesquisa.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPesquisa.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnPesquisa.UseVisualStyleBackColor = true;
-            this.btnPesquisa.Click += new System.EventHandler(this.btnPesquisa_Click);
-            // 
-            // txtNacionalidade
-            // 
-            this.txtNacionalidade.Location = new System.Drawing.Point(104, 274);
-            this.txtNacionalidade.MaxLength = 100;
-            this.txtNacionalidade.Name = "txtNacionalidade";
-            this.txtNacionalidade.Size = new System.Drawing.Size(328, 20);
-            this.txtNacionalidade.TabIndex = 18;
             // 
             // EliminarFormandos
             // 
