@@ -54,8 +54,8 @@
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripMenuItem15 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripbtnLogOut = new System.Windows.Forms.ToolStripButton();
             this.toolStriplblUser = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripbtnLogOut = new System.Windows.Forms.ToolStripButton();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -187,6 +187,7 @@
             this.toolStripMenuItem8.Name = "toolStripMenuItem8";
             this.toolStripMenuItem8.Size = new System.Drawing.Size(180, 22);
             this.toolStripMenuItem8.Text = "&Atualizar";
+            this.toolStripMenuItem8.Click += new System.EventHandler(this.toolStripMenuItem8_Click);
             // 
             // toolStripMenuItem9
             // 
@@ -264,6 +265,12 @@
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
             // 
+            // toolStriplblUser
+            // 
+            this.toolStriplblUser.Name = "toolStriplblUser";
+            this.toolStriplblUser.Size = new System.Drawing.Size(34, 22);
+            this.toolStriplblUser.Text = "Perfil";
+            // 
             // toolStripbtnLogOut
             // 
             this.toolStripbtnLogOut.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -273,12 +280,6 @@
             this.toolStripbtnLogOut.Size = new System.Drawing.Size(23, 22);
             this.toolStripbtnLogOut.Text = "Exit";
             this.toolStripbtnLogOut.Click += new System.EventHandler(this.toolStripbtnLogOut_Click);
-            // 
-            // toolStriplblUser
-            // 
-            this.toolStriplblUser.Name = "toolStriplblUser";
-            this.toolStriplblUser.Size = new System.Drawing.Size(34, 22);
-            this.toolStriplblUser.Text = "Perfil";
             // 
             // FormPrincipal
             // 

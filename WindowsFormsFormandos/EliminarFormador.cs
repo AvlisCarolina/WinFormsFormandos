@@ -34,10 +34,10 @@ namespace WindowsFormsFormandos
         {
             //string ID_Formador, ref string nome, ref string nif, ref string idUser, ref string userName, ref string password, ref string userRole, ref string data_nascimento, ref string id_area
 
-            string nome = "", nif = "", id_user = "", user_name = "", password = "", user_role = "", data_nascimento = "", area = "";
+            string nome = "", nif = "", id_user = "", user_name = "", password = "", user_role = "", data_nascimento = "", area = "", id_area = "";
 
 
-            if (ligacao.PesquisaFormadores(nudID.Value.ToString(), ref nome, ref nif, ref id_user, ref user_name, ref password, ref user_role, ref data_nascimento, ref area))
+            if (ligacao.PesquisaFormadores(nudID.Value.ToString(), ref nome, ref nif, ref id_user, ref user_name, ref password, ref user_role, ref data_nascimento, ref area, ref id_area))
             {
 
                 txtNome.Text = nome;
@@ -46,7 +46,7 @@ namespace WindowsFormsFormandos
                 txtUserName.Text = user_name;
                 txtPassword.Text = password;
                 txtUserRole.Text = user_role;
-                txtArea.Text = area;
+                txtArea.Text = id_area + "-" + area;
                 mtxtDataNascimento.Text = data_nascimento;
                 
 

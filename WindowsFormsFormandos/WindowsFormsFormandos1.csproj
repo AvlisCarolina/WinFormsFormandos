@@ -104,6 +104,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AtualizarFormadores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AtualizarFormadores.Designer.cs">
+      <DependentUpon>AtualizarFormadores.cs</DependentUpon>
+    </Compile>
     <Compile Include="EliminarFormador.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -211,6 +217,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AtualizarArea.resx">
       <DependentUpon>AtualizarArea.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AtualizarFormadores.resx">
+      <DependentUpon>AtualizarFormadores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AtualizarFormandos.resx">
       <DependentUpon>AtualizarFormandos.cs</DependentUpon>

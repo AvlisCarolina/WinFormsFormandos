@@ -26,6 +26,7 @@ namespace WindowsFormsFormandos
 
         InserirFormadores formInserirFormadores = new InserirFormadores();
         EliminarFormador formEliminarFormadores = new EliminarFormador();
+        AtualizarFormadores formAtualizarFormadores = new AtualizarFormadores();
         ListarFormadores formListarFormadores = new ListarFormadores();
 
         InserirArea formInserirArea = new InserirArea();
@@ -67,7 +68,6 @@ namespace WindowsFormsFormandos
             formInserirFormandos.Show();
             formInserirFormandos.Activate();
         }
-
         private void eliminarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (formEliminarFormandos.IsDisposed)
@@ -82,7 +82,6 @@ namespace WindowsFormsFormandos
             formEliminarFormandos.Activate();
 
         }
-
         private void atualizarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (formAtualizarFormandos.IsDisposed)
@@ -96,7 +95,6 @@ namespace WindowsFormsFormandos
             formAtualizarFormandos.Show();
             formAtualizarFormandos.Activate();
         }
-
         private void listarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (formListarFormandos.IsDisposed)
@@ -127,7 +125,6 @@ namespace WindowsFormsFormandos
             formAdicionarNacionalidade.Show();
             formAdicionarNacionalidade.Activate();
         }
-
         private void modificarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (formModificarNacionalidade.IsDisposed)
@@ -142,7 +139,6 @@ namespace WindowsFormsFormandos
             formModificarNacionalidade.Show();
             formModificarNacionalidade.Activate();
         }
-
         private void apagarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (formApagarNacionalidade.IsDisposed)
@@ -157,7 +153,6 @@ namespace WindowsFormsFormandos
             formApagarNacionalidade.Show();
             formApagarNacionalidade.Activate();
         }
-
         private void mostrarToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             if (formMostrarNacionalidade.IsDisposed)
@@ -181,7 +176,6 @@ namespace WindowsFormsFormandos
             toolStriplblUser.Text = "Perfil: " + Geral.id_user;
 
         }
-
         private void toolStripbtnLogOut_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Deseja efetuar Logout?\nTodas as janelas serão fechadas", "LogOut", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
@@ -243,7 +237,19 @@ namespace WindowsFormsFormandos
             formEliminarFormadores.Activate();
 
         }
-
+        private void toolStripMenuItem8_Click(object sender, EventArgs e)
+                {
+                    if (formAtualizarFormadores.IsDisposed)
+                    {
+                        formAtualizarFormadores = new AtualizarFormadores();
+                    }
+                    formAtualizarFormadores.MdiParent = this;
+                    formAtualizarFormadores.StartPosition = FormStartPosition.Manual;
+                    formAtualizarFormadores.Location = new Point((this.ClientSize.Width - formAtualizarFormadores.Width) / 2,
+                        (this.ClientSize.Height - formAtualizarFormadores.Height) / 3);
+                    formAtualizarFormadores.Show();
+                    formAtualizarFormadores.Activate();
+                }
 
         //Area
         private void toolStripMenuItem12_Click(object sender, EventArgs e)
@@ -259,7 +265,6 @@ namespace WindowsFormsFormandos
             formInserirArea.Show();
             formInserirArea.Activate();
         }
-
         private void toolStripMenuItem13_Click(object sender, EventArgs e)
         {
             if (formAtualizarArea.IsDisposed)
@@ -273,7 +278,6 @@ namespace WindowsFormsFormandos
             formAtualizarArea.Show();
             formAtualizarArea.Activate();
         }
-
         private void toolStripMenuItem14_Click(object sender, EventArgs e)
         {
             if (formEliminarArea.IsDisposed)
@@ -287,7 +291,6 @@ namespace WindowsFormsFormandos
             formEliminarArea.Show();
             formEliminarArea.Activate();
         }
-
         private void toolStripMenuItem15_Click(object sender, EventArgs e)
         {
             if (formListarArea.IsDisposed)

@@ -636,12 +636,12 @@ namespace WindowsFormsBDGestaoFormandos
             return ultimoIDUser;
         }
 
-        public bool PesquisaFormadores(string ID_Formador, ref string nome, ref string nif, ref string idUser, ref string userName, ref string password, ref string userRole, ref string data_nascimento, ref string area)
+        public bool PesquisaFormadores(string ID_Formador, ref string nome, ref string nif, ref string idUser, ref string userName, ref string password, ref string userRole, ref string data_nascimento, ref string area, ref string id_area)
         {
             bool flag = false;
 
             string query = $@"
-                Select nome, nif, dataNascimento, area, user.id_utilizador, user.nome_utilizador, user.palavra_passe, user.userRole
+                Select nome, nif, dataNascimento, area, user.id_utilizador, user.nome_utilizador, user.palavra_passe, user.userRole, area.id_area
                 from formador
                 join utilizador as user on user.id_utilizador = formador.id_utilizador
                 join area on area.id_area = formador.id_area
@@ -665,6 +665,7 @@ namespace WindowsFormsBDGestaoFormandos
                         userRole = dataReader[7].ToString();
                         data_nascimento = dataReader[2].ToString();
                         area = dataReader[3].ToString();
+                        id_area = dataReader[8].ToString();
 
                         flag = true;
                     }
@@ -749,6 +750,40 @@ namespace WindowsFormsBDGestaoFormandos
 
             return flag;
         }
+        public bool UpdateFormador(string ID, string nome, string NIF, string userRole, string data_nascimento, string id_area) // Aplica-se a mesma lógica do método InserirFormando, mudando apenas a query.
+        {
+            
+            string query = "update formador set nome = '" + nome + "', nif = '" + NIF + "', dataNascimento = '" +
+                data_nascimento + "', id_area = " + id_area +
+                " where id_formador = " + ID;
+
+            bool flag = true;
+
+            try
+            {
+                if (OpenConnection())
+                {
+                    MySqlCommand cmd = new MySqlCommand(query, connection);
+                    cmd.ExecuteNonQuery();
+
+                }
+            }
+
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+                flag = false;
+            }
+
+            finally
+            {
+                CloseConnection();
+            }
+
+            return flag;
+        }
+
+
         public void PreencherDataGridViewFormadores(ref DataGridView dgv)
         {
             string query = "select id_formador, nome, nif, area.area " +
